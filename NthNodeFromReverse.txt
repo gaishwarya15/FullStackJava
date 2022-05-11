@@ -1,0 +1,40 @@
+Question 3:
+Nth node from end of linked list 
+Given a linked list consisting of L nodes and given a number N. 
+The task is to find the Nth node from the end of the linked list.
+Example 1:
+Input:
+N = 2
+LinkedList: 1->2->3->4->5->6->7->8->9
+Output: 8
+Explanation: In the first example, there
+are 9 nodes in linked list and we need
+to find 2nd node from end. 2nd node
+from end os 8.  
+
+
+class GfG
+{
+    //Function to find the data of nth node from the end of a linked list.
+    int getNthFromLast(Node head, int n)
+    {
+    	// Your code here	
+    	int l=0,y=1;
+    	Node current = head;
+    	while(current!=null)
+    	{
+    	    current = current.next;
+    	    l++;
+    	}
+    	if(n>l){
+    	    return -1;
+    	}
+    	int x=l-n+1;
+    	current=head;
+    	while(x!=y){
+    	    current=current.next;
+    	    y++;
+    	}
+    	return current.data;
+    }
+}
